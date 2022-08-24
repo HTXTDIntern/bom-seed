@@ -7,10 +7,11 @@ version getTagOrDefault('1.0.0-SNAPSHOT')
 
 repositories {
     maven { url 'https://maven.pkg.github.com/HTXTDIntern/MavenBomTest1' }
-}dependencies {
-    compile platform('HTXTDIntern:bom-seed:2.5.6')
-    // some dependency declared in the BOM
-    compile 'org.codehaus.groovy:groovy'
+    depedencyManagement {
+        imports {
+            mavenBom 'HTXTDIntern:bom-seed:2.5.6'
+        }
+    }
 }
 
 
@@ -18,7 +19,7 @@ publishing {
     repositories {
         maven {
             name = 'GitHub'
-            url = uri('https://maven.pkg.github.com/' + System.getenv('GITHUB_REPOSITORY'))
+            url = uri('https://maven.pkg.github.com/HTXTDIntern/MavenBomTest1')
             credentials {
                 username = ''
                 password = System.getenv('GITHUB_TOKEN')
