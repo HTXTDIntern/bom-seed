@@ -9,13 +9,10 @@ repositories {
     maven {
          url 'https://maven.pkg.github.com/HTXTDIntern/bom-seed' }
     }
-
-depedencyManagement {
-        imports {
-            mavenBom 'HTXTDIntern:bom-seed:1.0.0'
-        }
-    }
-
+    
+dependencies {
+    compile platform("HTXTDIntern:bom-seed:1.0.0")
+}
 
 publishing {
     repositories {
