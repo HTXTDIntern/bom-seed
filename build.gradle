@@ -6,13 +6,16 @@ group 'HTXTDIntern'
 version getTagOrDefault('1.0.0-SNAPSHOT')
 
 repositories {
-    maven { url 'https://maven.pkg.github.com/HTXTDIntern/bom-seed' }
-    depedencyManagement {
+    maven {
+         url 'https://maven.pkg.github.com/HTXTDIntern/bom-seed' }
+    }
+}
+
+depedencyManagement {
         imports {
             mavenBom 'HTXTDIntern:bom-seed:1.0.0'
         }
     }
-}
 
 
 publishing {
